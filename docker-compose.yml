@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  blaze-app:
+    build:
+      context: ./Blaze
+    ports:
+      - "9145:9145"
+    volumes:
+      - "./files:/app/files"
+  
+  java-app:
+    build:
+      context: ./GetOverHere
+    ports:
+      - "4567:4567"
+    volumes:
+      - "./files:/app/files"
